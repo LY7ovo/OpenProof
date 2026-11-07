@@ -1,0 +1,271 @@
+benchmark: S-OWODB
+data_root: data
+output: runs/S-OWODB
+pretrained: weights/rf-detr-small.pth
+seed: 14022
+incremental: true
+geometry_selection: true
+class_disjoint: true
+tasks:
+- name: task1
+  task: 1
+  known_names:
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bus
+  - car
+  - cat
+  - cow
+  - dog
+  - horse
+  - motorbike
+  - sheep
+  - train
+  - elephant
+  - bear
+  - zebra
+  - giraffe
+  - truck
+  - person
+  images: images
+  train_new: S-OWODB/task1/new.json
+  open_train: S-OWODB/task1/open.json
+  tests:
+  - name: test
+    annotations: S-OWODB/task1/test.json
+    protocol: owod
+    images: images
+    voc_xml: S-OWODB/Annotations
+    top_k: 500
+    expected_images: 4952
+    unknown: true
+- name: task2
+  task: 2
+  known_names:
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bus
+  - car
+  - cat
+  - cow
+  - dog
+  - horse
+  - motorbike
+  - sheep
+  - train
+  - elephant
+  - bear
+  - zebra
+  - giraffe
+  - truck
+  - person
+  - traffic light
+  - fire hydrant
+  - stop sign
+  - parking meter
+  - bench
+  - chair
+  - diningtable
+  - pottedplant
+  - backpack
+  - umbrella
+  - handbag
+  - tie
+  - suitcase
+  - microwave
+  - oven
+  - toaster
+  - sink
+  - refrigerator
+  - bed
+  - toilet
+  - sofa
+  images: images
+  train_new: S-OWODB/task2/new.json
+  open_train: S-OWODB/task2/open.json
+  tests:
+  - name: test
+    annotations: S-OWODB/task2/test.json
+    protocol: owod
+    images: images
+    voc_xml: S-OWODB/Annotations
+    top_k: 500
+    expected_images: 4952
+    unknown: true
+  replay: S-OWODB/task2/replay.json
+- name: task3
+  task: 3
+  known_names:
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bus
+  - car
+  - cat
+  - cow
+  - dog
+  - horse
+  - motorbike
+  - sheep
+  - train
+  - elephant
+  - bear
+  - zebra
+  - giraffe
+  - truck
+  - person
+  - traffic light
+  - fire hydrant
+  - stop sign
+  - parking meter
+  - bench
+  - chair
+  - diningtable
+  - pottedplant
+  - backpack
+  - umbrella
+  - handbag
+  - tie
+  - suitcase
+  - microwave
+  - oven
+  - toaster
+  - sink
+  - refrigerator
+  - bed
+  - toilet
+  - sofa
+  - frisbee
+  - skis
+  - snowboard
+  - sports ball
+  - kite
+  - baseball bat
+  - baseball glove
+  - skateboard
+  - surfboard
+  - tennis racket
+  - banana
+  - apple
+  - sandwich
+  - orange
+  - broccoli
+  - carrot
+  - hot dog
+  - pizza
+  - donut
+  - cake
+  images: images
+  train_new: S-OWODB/task3/new.json
+  open_train: S-OWODB/task3/open.json
+  tests:
+  - name: test
+    annotations: S-OWODB/task3/test.json
+    protocol: owod
+    images: images
+    voc_xml: S-OWODB/Annotations
+    top_k: 500
+    expected_images: 4952
+    unknown: true
+  replay: S-OWODB/task3/replay.json
+- name: task4
+  task: 4
+  known_names:
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bus
+  - car
+  - cat
+  - cow
+  - dog
+  - horse
+  - motorbike
+  - sheep
+  - train
+  - elephant
+  - bear
+  - zebra
+  - giraffe
+  - truck
+  - person
+  - traffic light
+  - fire hydrant
+  - stop sign
+  - parking meter
+  - bench
+  - chair
+  - diningtable
+  - pottedplant
+  - backpack
+  - umbrella
+  - handbag
+  - tie
+  - suitcase
+  - microwave
+  - oven
+  - toaster
+  - sink
+  - refrigerator
+  - bed
+  - toilet
+  - sofa
+  - frisbee
+  - skis
+  - snowboard
+  - sports ball
+  - kite
+  - baseball bat
+  - baseball glove
+  - skateboard
+  - surfboard
+  - tennis racket
+  - banana
+  - apple
+  - sandwich
+  - orange
+  - broccoli
+  - carrot
+  - hot dog
+  - pizza
+  - donut
+  - cake
+  - laptop
+  - mouse
+  - remote
+  - keyboard
+  - cell phone
+  - book
+  - clock
+  - vase
+  - scissors
+  - teddy bear
+  - hair drier
+  - toothbrush
+  - wine glass
+  - cup
+  - fork
+  - knife
+  - spoon
+  - bowl
+  - tvmonitor
+  - bottle
+  images: images
+  train_new: S-OWODB/task4/new.json
+  open_train: S-OWODB/task4/open.json
+  tests:
+  - name: test
+    annotations: S-OWODB/task4/test.json
+    protocol: owod
+    images: images
+    voc_xml: S-OWODB/Annotations
+    top_k: 500
+    expected_images: 4952
+    unknown: false
+  replay: S-OWODB/task4/replay.json

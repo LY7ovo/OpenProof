@@ -1,0 +1,161 @@
+benchmark: animal
+data_root: data
+output: runs/animal
+pretrained: weights/rf-detr-small.pth
+seed: 14022
+incremental: false
+geometry_selection: false
+class_disjoint: false
+tasks:
+- name: split1
+  task: 1
+  known_names:
+  - Starfish
+  - Deer
+  - Tick
+  - Lynx
+  - Monkey
+  - Squirrel
+  - Koala
+  - Fox
+  - Spider
+  - Scorpion
+  - Rabbit
+  - Hamster
+  - Woodpecker
+  - Snail
+  - Brown bear
+  - Polar bear
+  - Lion
+  - Bull
+  - Shrimp
+  - Panda
+  - Chicken
+  - Sparrow
+  - Cattle
+  - Lobster
+  images: images
+  train_new: animal/split1/train.json
+  open_train: animal/split1/train.json
+  tests:
+  - name: test
+    annotations: animal/split1/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 15609
+- name: split2
+  task: 2
+  known_names:
+  - Sea lion
+  - Mule
+  - Lizard
+  - Raccoon
+  - Butterfly
+  - Hippopotamus
+  - Kangaroo
+  - Frog
+  - Harbor seal
+  - Red panda
+  - Antelope
+  - Ant
+  - Sheep
+  - Dog
+  - Magpie
+  - Teddy bear
+  - Oyster
+  - Otter
+  - Seahorse
+  - Caterpillar
+  - Worm
+  - Zebra
+  - Jaguar (Animal)
+  - Rays and skates
+  images: images
+  train_new: animal/split2/train.json
+  open_train: animal/split2/train.json
+  tests:
+  - name: test
+    annotations: animal/split2/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 15609
+- name: split3
+  task: 3
+  known_names:
+  - Tortoise
+  - Skunk
+  - Blue jay
+  - Rhinoceros
+  - Turkey
+  - Falcon
+  - Dinosaur
+  - Bat (Animal)
+  - Squid
+  - Giraffe
+  - Owl
+  - Armadillo
+  - Swan
+  - Duck
+  - Goose
+  - Camel
+  - Horse
+  - Tiger
+  - Goldfish
+  - Cat
+  - Shark
+  - Parrot
+  - Leopard
+  - Goat
+  images: images
+  train_new: animal/split3/train.json
+  open_train: animal/split3/train.json
+  tests:
+  - name: test
+    annotations: animal/split3/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 15609
+- name: split4
+  task: 4
+  known_names:
+  - Dragonfly
+  - Ladybug
+  - Raven
+  - Penguin
+  - Hedgehog
+  - Mouse
+  - Snake
+  - Jellyfish
+  - Porcupine
+  - Ostrich
+  - Elephant
+  - Dolphin
+  - Alpaca
+  - Crab
+  - Eagle
+  - Isopod
+  - Cheetah
+  - Sea turtle
+  - Whale
+  - Bee
+  - Canary
+  - Pig
+  - Crocodile
+  - Centipede
+  images: images
+  train_new: animal/split4/train.json
+  open_train: animal/split4/train.json
+  tests:
+  - name: test
+    annotations: animal/split4/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 15609

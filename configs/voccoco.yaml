@@ -1,0 +1,58 @@
+benchmark: voccoco
+data_root: data
+output: runs/voccoco
+pretrained: weights/rf-detr-small.pth
+seed: 14022
+incremental: false
+geometry_selection: false
+class_disjoint: true
+tasks:
+- name: voc
+  task: 1
+  known_names:
+  - aeroplane
+  - bicycle
+  - bird
+  - boat
+  - bottle
+  - bus
+  - car
+  - cat
+  - chair
+  - cow
+  - diningtable
+  - dog
+  - horse
+  - motorbike
+  - person
+  - pottedplant
+  - sheep
+  - sofa
+  - train
+  - tvmonitor
+  images: images
+  train_new: voccoco/train.json
+  open_train: voccoco/train.json
+  tests:
+  - name: voc
+    annotations: voccoco/voc.json
+    images: images
+    protocol: uod
+    top_k: 500
+    unknown: false
+    expected_images: 4952
+  - name: coco_mixed
+    annotations: voccoco/coco_mixed.json
+    images: images
+    protocol: uod
+    top_k: 500
+    unknown: true
+    expected_images: 897
+    expected_unknown_images: 704
+  - name: coco_ood
+    annotations: voccoco/coco_ood.json
+    images: images
+    protocol: uod
+    top_k: 500
+    unknown: true
+    expected_images: 504

@@ -1,0 +1,89 @@
+benchmark: vehicle
+data_root: data
+output: runs/vehicle
+pretrained: weights/rf-detr-small.pth
+seed: 14022
+incremental: false
+geometry_selection: false
+class_disjoint: false
+tasks:
+- name: split1
+  task: 1
+  known_names:
+  - Bicycle
+  - Golf cart
+  - Van
+  - Taxi
+  - Airplane
+  - Motorcycle
+  images: images
+  train_new: vehicle/split1/train.json
+  open_train: vehicle/split1/train.json
+  tests:
+  - name: test
+    annotations: vehicle/split1/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 6991
+- name: split2
+  task: 2
+  known_names:
+  - Train
+  - Truck
+  - Barge
+  - Gondola
+  - Rocket
+  - Bus
+  images: images
+  train_new: vehicle/split2/train.json
+  open_train: vehicle/split2/train.json
+  tests:
+  - name: test
+    annotations: vehicle/split2/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 6991
+- name: split3
+  task: 3
+  known_names:
+  - Submarine
+  - Jet ski
+  - Unicycle
+  - Snowmobile
+  - Cart
+  - Tank
+  images: images
+  train_new: vehicle/split3/train.json
+  open_train: vehicle/split3/train.json
+  tests:
+  - name: test
+    annotations: vehicle/split3/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 6991
+- name: split4
+  task: 4
+  known_names:
+  - Canoe
+  - Helicopter
+  - Wheelchair
+  - Ambulance
+  - Segway
+  - Limousine
+  images: images
+  train_new: vehicle/split4/train.json
+  open_train: vehicle/split4/train.json
+  tests:
+  - name: test
+    annotations: vehicle/split4/test.json
+    protocol: coco
+    images: images
+    top_k: 100
+    unknown: true
+    expected_images: 6991
